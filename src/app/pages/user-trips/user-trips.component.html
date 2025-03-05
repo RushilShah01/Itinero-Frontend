@@ -1,0 +1,19 @@
+<div class="travel-history-container">
+    <h2>Travel History</h2>
+
+    <ul *ngIf="travelHistory.length > 0; else noTrips">
+        <li *ngFor="let trip of travelHistory" class="trip-item">
+            <strong>Destination:</strong> {{ trip.destination }} <br>
+            <strong>Start Date:</strong> {{ trip.startDate | date: 'dd/MM/yyyy' }} <br>
+            <strong>End Date:</strong> {{ trip.endDate | date: 'dd/MM/yyyy' }} <br>
+            <strong>Status:</strong> {{ trip.status }} <br>
+            <strong>Expense Type:</strong> {{ trip.expenseType }} <br>
+            <strong>Expense:</strong> {{ trip.expense}} <br>
+        </li>
+        
+    </ul>
+
+    <ng-template #noTrips>
+        <p>No travel history available.</p>
+    </ng-template>
+</div>

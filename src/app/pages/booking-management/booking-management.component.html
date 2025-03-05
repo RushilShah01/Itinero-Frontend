@@ -1,0 +1,39 @@
+<main class="main-content">
+  <section class="trip-management">
+    <h2>Manage Trips</h2>
+
+    <div class="trip-requests" *ngIf="requests.length > 0; else noRequests">
+      <div class="request-card" *ngFor="let request of requests">
+        <p>Trip to <strong>{{ request.destination }}</strong></p>
+
+        <!-- ✅ Added proper spacing using div for layout -->
+        <div class="trip-details">
+          <p class="trip-detail"><strong>Start:</strong> <span>{{ request.startDate | date: 'MMM d, y' }}</span></p>
+          <p class="trip-detail"><strong>End:</strong> <span>{{ request.endDate | date: 'MMM d, y' }}</span></p>
+          <p class="trip-detail"><strong>Expense:</strong> <span>${{ request.expense }}</span></p>
+        </div>
+
+        <p>Status: 
+          <strong [ngClass]="{
+            'approved': request.status === 'Approved', 
+            'pending': request.status === 'Pending', 
+            'rejected': request.status === 'Rejected'
+          }">{{ request.status }}</strong>
+        </p>
+
+        <div class="btn-container">
+          <button class="approve-btn" (click)="changeRequestStatus(request._id, 'Approved')">
+            Accept
+          </button>
+          <button class="reject-btn" (click)="changeRequestStatus(request._id, 'Rejected')">
+            Reject
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noRequests>
+      <p>No pending travel requests found.</p>
+    </ng-template>
+  </section>
+</main>

@@ -1,0 +1,125 @@
+.main-content {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.trip-management {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.trip-requests {
+  display: flex; 
+  flex-wrap: wrap; /* Ensures responsiveness */
+  justify-content: center; /* Centers the cards */
+  gap: 20px;
+  padding: 10px;
+}
+
+.request-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 320px;
+  margin: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.request-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* ✅ Added flex layout for date and expense */
+.trip-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Proper spacing between details */
+  margin-top: 10px;
+}
+
+/* ✅ Ensuring proper spacing between spans */
+.trip-detail span {
+  display: inline-block;
+  margin-right: 10px; /* Space between labels and values */
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Styling for labels */
+.trip-detail strong {
+  font-weight: bold;
+  color: #222;
+  margin-right: 5px;
+}
+
+/* Status Highlight */
+.status {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #4CAF50;
+  margin-top: 10px;
+}
+
+/* Button Container */
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.approve-btn,
+.reject-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 48%;
+  transition: background-color 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.reject-btn {
+  background-color: #f44336;
+}
+
+.approve-btn:hover {
+  background-color: #45a049;
+}
+
+.reject-btn:hover {
+  background-color: #e53935;
+}
+
+/* No Requests Message */
+.noRequests {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 20px;
+}

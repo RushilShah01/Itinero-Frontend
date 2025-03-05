@@ -1,0 +1,12 @@
+<div class="sidebar">
+    <h2>Itinero</h2>
+    <ul>
+        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li *ngIf="role === 'Admin'"><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+        <li *ngIf="role === 'Admin'"><a routerLink="/manage-trips" routerLinkActive="active">Manage Trips</a></li>
+        <li *ngIf="role === 'Admin'"><a routerLink="/manage-users" routerLinkActive="active">Manage Users</a></li>
+        <li><a routerLink="/booking" routerLinkActive="active">Book a Trip</a></li>
+        <li><a routerLink="/trips" routerLinkActive="active">My Trips</a></li>
+        <li><a (click)="onLogout()">Logout</a></li>
+    </ul>
+</div>

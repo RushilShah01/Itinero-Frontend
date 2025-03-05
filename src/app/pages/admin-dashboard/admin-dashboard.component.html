@@ -1,0 +1,47 @@
+<div class="dashboard-container">
+  <main class="main-content">
+    <header class="top-navbar">
+      <h1>Dashboard</h1>
+      <!-- <div class="admin-info">
+        <span>Welcome, {{userName}}</span>
+      </div> -->
+    </header>
+
+    <!-- Dashboard Overview Section -->
+    <section class="dashboard-overview">
+      <div class="card">
+        <h3>Total Requests</h3>
+        <p>{{ totalRequests }}</p>
+      </div>
+      <div class="card">
+        <h3>Approved Requests</h3>
+        <p>{{ totalAcceptedRequests }}</p>
+      </div>
+      <div class="card">
+        <h3>Pending Requests</h3>
+        <p>{{ totalPendingRequests }}</p>
+      </div>
+      <div class="card">
+        <h3>Total Expense</h3>
+        <p>{{ totalExpense }} INR</p>
+      </div>
+    </section>
+    <section class="expense-management">
+      <h2>Expense Management</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Employee Name</th>
+            <th>Amount Spent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let expense of expenses">
+            <td>{{ expense.userName }}</td>
+            <td>{{ expense.totalExpense }} INR</td>  
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>

@@ -1,0 +1,36 @@
+<div class="main">
+    <div class="auth-container">
+        <h2>Itinero</h2>
+        
+        <!-- Login Form -->
+        <form *ngIf="isLoginMode; else registerForm">
+            <input type="email" placeholder="Email" name="email" required [(ngModel)]="email" />
+            <input type="password" placeholder="Password" name="password" required [(ngModel)]="password"/>
+            <button (click)="onLogin()" type="submit">Login</button>
+            <p>Don't have an account? <a (click)="toggleMode()">Register</a></p>
+        </form>
+
+        <!-- Register Form -->
+        <ng-template #registerForm>
+            <form>
+                <input type="text" placeholder="Full Name" name="name" required [(ngModel)]="name"/>
+                <input type="email" placeholder="Email" name="email" required [(ngModel)]="email"/>
+                <input type="password" placeholder="Password" name="password" required [(ngModel)]="password"/>
+        
+                <!-- <div>
+                    <label for="role">Select Role:</label>
+                    <select name="role" id="role" [(ngModel)]="role" required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="employee">Employee</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div> -->
+        
+                <button (click)="onRegister()" type="submit">Register</button>
+                <p>Already have an account? <a (click)="toggleMode()">Login</a></p>
+            </form>
+        </ng-template>
+        
+
+    </div>
+</div>

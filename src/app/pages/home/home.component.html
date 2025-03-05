@@ -1,0 +1,36 @@
+<div class="dashboard-container">
+    <main class="main-content">
+      <h1>Welcome, {{userName}}</h1>
+  
+      <div class="dashboard-grid">
+
+        <div class="dashboard-section">
+          <h2>Upcoming Trips</h2>
+          <!-- <div *ngIf="nearestTrip">
+            <p>Destination: {{ nearestTrip.destination }}</p>
+            <p>Start Date: {{ nearestTrip.startDate | date:'short' }}</p>
+            <p>Countdown: {{ countdown }}</p>
+          </div>
+          <div *ngIf="!nearestTrip">
+            <p>No upcoming trips.</p>
+          </div> -->
+          <ul>
+            <li *ngFor="let trip of upcomingTrips">
+              📍 {{ trip.destination }} - {{ trip.startDate | date:'mediumDate' }}
+            </li>
+          </ul>
+        </div>
+  
+      
+        <div class="dashboard-section">
+          <h2>Previous Trips</h2>
+          <ul>
+            <li *ngFor="let trip of previousTrips">
+              ✔️ {{ trip.destination }} - {{ trip.startDate | date:'mediumDate' }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  

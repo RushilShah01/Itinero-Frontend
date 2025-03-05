@@ -1,0 +1,53 @@
+<main class="main-content">
+  <div class="form-container">
+    <h2>Book a Trip</h2>
+
+    <form [formGroup]="travelForm">
+
+      <!-- To -->
+      <div class="form-group">
+        <label for="to">Destination</label>
+        <input type="text" id="to" placeholder="Enter destination city" formControlName="destination"/>
+      </div>
+
+      <!-- Start and End Date -->
+      <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input type="date" id="startDate" formControlName="startDate" />
+      </div>
+
+      <div class="form-group">
+        <label for="endDate">End Date</label>
+        <input type="date" id="endDate" formControlName="endDate" />
+      </div>
+
+      <!-- Reason -->
+      <div class="form-group">
+        <label for="reason">Purpose</label>
+        <textarea id="reason" placeholder="Enter the reason for the trip" formControlName="purpose" ></textarea>
+      </div>
+
+      <!-- Inclusion (Dropdown with empty default value) -->
+      <div class="form-group">
+        <label for="inclusion">Expense Type</label>
+        <select id="inclusion" formControlName="expenseType" >
+          <option value="" disabled selected>Select an option</option> <!-- Empty default value -->
+          <option value="Flight">Flight</option>
+          <option value="Hotel">Hotel</option>
+          <option value="Both">Both</option>
+        </select>
+      </div>
+
+
+      <!-- Estimated Cost -->
+      <div class="form-group">
+        <label for="estimatedCost">Expense</label>
+        <input type="number" id="estimatedCost" placeholder="Enter estimated cost" formControlName="expense" />
+      </div>
+
+
+      <!-- Submit Button -->
+      <button type="submit" (click)="bookTrip()">Submit</button>
+    </form>
+  </div>
+</main>

@@ -1,0 +1,49 @@
+/* Sidebar Styling */
+.sidebar {
+    width: 100%;
+    /* Fixed width */
+    height: 100%;
+    /* Full viewport height */
+    background: linear-gradient(135deg, #2c3e50, #4a90e2);
+    /* Navy to Teal */
+    color: white;
+    box-sizing: border-box;
+    padding: 20px;
+    /* Fixed position on the left */
+    left: 0;
+    top: 0;
+    /* Enables scrolling if needed */
+}
+
+/* Sidebar Title */
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Sidebar Navigation */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Sidebar Links */
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
